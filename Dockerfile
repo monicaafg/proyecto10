@@ -13,7 +13,8 @@ ADD ${JAR_FILE} app.jar
 VOLUME /tmp
 RUN rm -rf /usr/share/nginx/html/*
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY dist/billingApp /usr/share/nginx/html
+COPY . /usr/share/nginx/html
+# COPY dist/billingApp /usr/share/nginx/html
 COPY appshell.sh appshell.sh
 #expose ports 8080 for java swagger app and 80 for nginx app
 EXPOSE 80 8080
