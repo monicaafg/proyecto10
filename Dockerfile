@@ -11,7 +11,7 @@ ADD ${JAR_FILE} app.jar
 #Install app on nginx serve
  # use a volume is mor efficient and speed that filesystem
 VOLUME /tmp
-# RUN rm -rf /usr/share/nginx/html/*
+RUN rm -rf /usr/share/nginx/html/*
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY dist/billingApp /usr/share/nginx/html
 COPY appshell.sh appshell.sh
